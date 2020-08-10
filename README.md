@@ -27,14 +27,17 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column             | Type    | Options     |
-| ------------------ | ------- | ----------- |
-| nickname           | string  | null: false |
-| last_name          | string  | null: false |
-| first_name         | string  | null: false |
-| last_name_reading  | string  | null: false |
-| first_name_reading | string  | null: false |
-| date               | integer | null: false |
+| Column                | Type    | Options     |
+| --------------------- | ------- | ----------- |
+| nickname              | string  | null: false |
+| email                 | string  | null: false |
+| password              | string  | null: false |
+| password_confirmation | string  | null: false |
+| last_name             | string  | null: false |
+| first_name            | string  | null: false |
+| last_name_reading     | string  | null: false |
+| first_name_reading    | string  | null: false |
+| birthday              | date    | null: false |
 
 ### Association
 
@@ -48,15 +51,16 @@ Things you may want to cover:
 | Column      | Type    | Options     |
 | ----------- | ------- | ----------- |
 | image       |         | null: false |
-| item_price  | integer | null: false |
+| price       | integer | null: false |
 | explanation | text    | null: false |
-| category    | string  | null: false |
+| category    | integer | null: false |
 | item_state  | text    | null: false |
 
 ### Association
 
 - belongs_to :user
 - has_many :comments
+- has_one :address
 
 ## comments テーブル
 
@@ -75,7 +79,8 @@ Things you may want to cover:
 
 | Column       | Type    | Options          |
 | ------------ | ------- | -----------------|
-| payment      | integer | null: false      |
+| user_id      | integer | null: false      |
+| item_id      | integer | null: false      |
 
 ### Association
 
@@ -90,7 +95,9 @@ Things you may want to cover:
 | city          | string  |             |
 | house_number  | string  |             |
 | building_name | string  |             |
+| tel_number    | integer | null: false |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :item
