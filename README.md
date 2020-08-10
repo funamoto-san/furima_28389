@@ -64,8 +64,7 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_many :comments
-- has_one :address
-- has_one :item_order
+- has_one :order
 
 ## comments テーブル
 
@@ -90,6 +89,8 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
+- belongs_to :item
+- has_one :address
 
 ## address テーブル
 
@@ -100,19 +101,9 @@ Things you may want to cover:
 | city          | string  |             |
 | house_number  | string  |             |
 | building_name | string  |             |
-| tel_number    | integer | null: false |
+| tel_number    | string  | null: false |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-
-## item_order テーブル
-
-| Column     | Type    | Options                       |
-| ---------- | ------- | ----------------------------- |
-| item_id    | integer | null: false, foreign_key: true|
-
-### Association
-
--belongs_to :item
+- belongs_to :order
