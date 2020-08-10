@@ -44,21 +44,21 @@ Things you may want to cover:
 - has_many :items
 - has_many :comments
 - has_many :orders
-- has_one :address
 
 ## items テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| image           |         | null: false |
-| name            | string  | null: false |
-| price           | integer | null: false |
-| explanation     | text    | null: false |
-| category        | integer | null: false |
-| state           | integer | null: false |
-| delivery_charge | integer | null: false |
-| send_prefecture | integer | null: false |
-| shipping_day    | integer | null: false |
+| Column          | Type    | Options                       |
+| --------------- | ------- | ----------------------------- |
+| image           | text    | null: false                   |
+| name            | string  | null: false                   |
+| price           | integer | null: false                   |
+| explanation     | text    | null: false                   |
+| category        | integer | null: false                   |
+| state           | integer | null: false                   |
+| delivery_charge | integer | null: false                   |
+| send_prefecture | integer | null: false                   |
+| shipping_day    | integer | null: false                   |
+| user_id         | integer | null: false, foreign_key: true|
 
 ### Association
 
@@ -105,5 +105,4 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :user
 - belongs_to :order
