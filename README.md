@@ -49,7 +49,7 @@ Things you may want to cover:
 
 | Column          | Type    | Options                       |
 | --------------- | ------- | ----------------------------- |
-| image           | text    | null: false                   |
+| image           | string  | null: false                   |
 | name            | string  | null: false                   |
 | price           | integer | null: false                   |
 | explanation     | text    | null: false                   |
@@ -98,10 +98,11 @@ Things you may want to cover:
 | ------------- | ------- | ------------------------------ |
 | postal_code   | string  | null: false                    |
 | prefecture    | integer | null: false                    |
-| city          | string  |              foreign_key: true |
-| house_number  | string  |              foreign_key: true |
-| building_name | string  |              foreign_key: true |
-| tel_number    | string  | null: false, foreign_key: true |
+| city          | string  |                                |
+| house_number  | string  |                                |
+| building_name | string  |                                |
+| tel_number    | string  | null: false                    |
+| order_id      | integer | null: false, foreign_key: true |
 
 ### Association
 
