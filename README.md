@@ -34,14 +34,14 @@ Things you may want to cover:
 | first_name         | string  | null: false |
 | last_name_reading  | string  | null: false |
 | first_name_reading | string  | null: false |
-| birth_year         | integer | null: false |
-| birth_month        | integer | null: false |
-| birth_day          | integer | null: false |
+| date               | integer | null: false |
 
 ### Association
 
 - has_many :items
 - has_many :comments
+- has_many :orders
+- has_one :address
 
 ## items テーブル
 
@@ -50,6 +50,8 @@ Things you may want to cover:
 | image       |         | null: false |
 | item_price  | integer | null: false |
 | explanation | text    | null: false |
+| category    | string  | null: false |
+| item_state  | text    | null: false |
 
 ### Association
 
@@ -68,3 +70,29 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
+
+## orders テーブル
+
+| Column       | Type  | Options          |
+| ------------ | ----- | -----------------|
+| send_address | text  | null: false      |
+|  |  |  |
+|  |  |  |
+
+### Association
+
+- belongs_to :user
+
+## address テーブル
+
+| Column        | Type    | Options     |
+| ------------- | ------- | ------------|
+| postal_code   | string  | null: false |
+| prefecture    | integer | null: false |
+| city          | string  |             |
+| house_number  | string  |             |
+| building_name | string  |             |
+
+### Association
+
+- belongs_to :user
