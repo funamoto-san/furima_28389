@@ -48,27 +48,32 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| image       |         | null: false |
-| price       | integer | null: false |
-| explanation | text    | null: false |
-| category    | integer | null: false |
-| item_state  | text    | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| image           |         | null: false |
+| name            | string  | null: false |
+| price           | integer | null: false |
+| explanation     | text    | null: false |
+| category        | integer | null: false |
+| state           | integer | null: false |
+| delivery_charge | integer | null: false |
+| send_prefecture | integer | null: false |
+| shipping_day    | integer | null: false |
 
 ### Association
 
 - belongs_to :user
 - has_many :comments
 - has_one :address
+- has_one :item_order
 
 ## comments テーブル
 
-| Column  | Type    | Options     |
-| ------- | ------- | ----------- |
-| text    | text    | null: false |
-| user_id | integer | null: false |
-| item_id | integer | null: false |
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
+| text    | text    | null: false                    |
+| user_id | integer | null: false, foreign_key: true |
+| item_id | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -77,10 +82,10 @@ Things you may want to cover:
 
 ## orders テーブル
 
-| Column       | Type    | Options          |
-| ------------ | ------- | -----------------|
-| user_id      | integer | null: false      |
-| item_id      | integer | null: false      |
+| Column       | Type    | Options                        |
+| ------------ | ------- | ------------------------------ |
+| user_id      | integer | null: false, foreign_key: true |
+| item_id      | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -101,3 +106,13 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
+
+## item_order テーブル
+
+| Column     | Type    | Options                       |
+| ---------- | ------- | ----------------------------- |
+| item_id    | integer | null: false, foreign_key: true|
+
+### Association
+
+-belongs_to :item
