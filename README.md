@@ -73,11 +73,9 @@ Things you may want to cover:
 
 ## orders テーブル
 
-| Column       | Type  | Options          |
-| ------------ | ----- | -----------------|
-| send_address | text  | null: false      |
-|  |  |  |
-|  |  |  |
+| Column       | Type    | Options          |
+| ------------ | ------- | -----------------|
+| payment      | integer | null: false      |
 
 ### Association
 
