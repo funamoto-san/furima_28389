@@ -8,7 +8,7 @@ FactoryBot.define do
     first_name            {"花道"}
     last_name_reading     {"サクラギ"}
     first_name_reading    {"ハナミチ"}
-    birthday              {19840401}
+    birthday              {19840401} 
   end
 end
 
