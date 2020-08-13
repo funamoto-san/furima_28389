@@ -27,20 +27,3 @@ class User < ApplicationRecord
   has_many :orders
 
 end
-
-
-
-
-
-
-# 全角ひらがな、漢字
-# VALID_NAME_REGEX = /\A[一-龥ぁ-ん]/
-
-# 全角カタカナ
-# VALID_NAME_READING_REGEX = /\A[ァ-ヶー－]+\z/
-
-# 半角アルファベット（大文字・小文字・数値）
-# VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
-
-# e-mail
-# VALID_EMAIL_REGEX = /\A\S+@\S+\.\S+\z/
