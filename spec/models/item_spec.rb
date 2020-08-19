@@ -60,8 +60,18 @@ describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Category は「---」以外を選択してください。")
       end
+      it 'categoryがnilでは出品できない' do
+        @item.category_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category は「---」以外を選択してください。")
+      end
       it 'stateが---では出品できない' do
         @item.state_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("State は「---」以外を選択してください。")
+      end
+      it 'stateがnilでは出品できない' do
+        @item.state_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("State は「---」以外を選択してください。")
       end
@@ -70,13 +80,28 @@ describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery charge は「---」以外を選択してください。")
       end
+      it 'delivery_chargeがnilでは出品できない' do
+        @item.delivery_charge_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery charge は「---」以外を選択してください。")
+      end
       it 'shipping_regionが---では出品できない' do
         @item.shipping_region_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping region は「---」以外を選択してください。")
       end
+      it 'shipping_regionがnilでは出品できない' do
+        @item.shipping_region_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping region は「---」以外を選択してください。")
+      end
       it 'shipping_dayが---では出品できない' do
         @item.shipping_day_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping day は「---」以外を選択してください。")
+      end
+      it 'shipping_dayがnilでは出品できない' do
+        @item.shipping_day_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping day は「---」以外を選択してください。")
       end
