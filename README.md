@@ -49,14 +49,14 @@ Things you may want to cover:
 
 | Column          | Type    | Options                        |
 | --------------- | ------- | ------------------------------ |
-| image           | string  | null: false                    |
+<!-- | image           | string  | null: false                    | アクティブストレージで管理している -->
 | name            | string  | null: false                    |
 | price           | integer | null: false                    |
 | explanation     | text    | null: false                    |
 | category        | integer | null: false                    |
 | state           | integer | null: false                    |
 | delivery_charge | integer | null: false                    |
-| send_prefecture | integer | null: false                    |
+| shipping_region | integer | null: false                    |
 | shipping_day    | integer | null: false                    |
 | user_id         | integer | null: false, foreign_key: true |
 | buyer_id        | integer |              foreign_key: true |
