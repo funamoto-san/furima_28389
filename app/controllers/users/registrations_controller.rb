@@ -13,14 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def create
   # super
   # end
-  def create
-    @user = User.new(configure_permitted_parameters)
-    if @user.save
-      redirect_to controller: :items, action: :index
-    else
-      render user_registration_path
-    end
-  end
+  
   # GET /resource/edit
   # def edit
   #   super

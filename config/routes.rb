@@ -4,5 +4,13 @@ Rails.application.routes.draw do
   root "items#index"
   resources :items
   resources :orders, only: [:index]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end
+
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+# render :new
+# ルーティングを経由しない
+# →エラーメッセージが表示される
+
+# redirect_to（りろーどぼたん）
+# →エラーメッセージが表示されない
