@@ -1,10 +1,3 @@
-# FactoryBot.define do
-#   factory :item_token do
-#     token "item_token"
-#     association :item, factory: :item, id: 1
-#   end
-# end
-
 FactoryBot.define do
   factory :item_order do
     token { "item_token" }

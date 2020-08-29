@@ -14,16 +14,8 @@ const pay = () => {
       exp_month: formData.get("item_order[exp_month]"),
       exp_year: `20${formData.get("item_order[exp_year]")}`,
     };
-    // console.log(card)
-
-    // const number = formData.get("item_order[number]");
-    // if (number.length < 16){
-    //   alert("口座番号の桁数が異常です。");
-    // }
-
+    
     Payjp.createToken(card, (status, response) => {
-      // console.log(status)
-      // console.table(response)
       if (status === 200) {
         console.log('card')
         const token = response.id;
