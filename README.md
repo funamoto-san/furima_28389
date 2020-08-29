@@ -49,17 +49,17 @@ Things you may want to cover:
 
 | Column          | Type    | Options                        |
 | --------------- | ------- | ------------------------------ |
-<!-- | image           | string  | null: false                    | アクティブストレージで管理している -->
-| name            | string  | null: false                    |
-| price           | integer | null: false                    |
-| explanation     | text    | null: false                    |
-| category        | integer | null: false                    |
-| state           | integer | null: false                    |
-| delivery_charge | integer | null: false                    |
-| shipping_region | integer | null: false                    |
-| shipping_day    | integer | null: false                    |
-| user_id         | integer | null: false, foreign_key: true |
-| buyer_id        | integer |              foreign_key: true |
+<!-- | image      | string  | null: false     | アクティブストレージで管理している -->
+| name               | string  | null: false                    |
+| price              | integer | null: false                    |
+| explanation        | text    | null: false                    |
+| category_id        | integer | null: false                    |
+| state_id           | integer | null: false                    |
+| delivery_charge_id | integer | null: false                    |
+| shipping_region_id | integer | null: false                    |
+| shipping_day_id    | integer | null: false                    |
+| user_id            | integer | null: false, foreign_key: true |
+| buyer_id           | integer |              foreign_key: true |
 
 ### Association
 
@@ -82,10 +82,14 @@ Things you may want to cover:
 
 ## orders テーブル
 
-| Column       | Type    | Options                        |
-| ------------ | ------- | ------------------------------ |
-| user_id      | integer | null: false, foreign_key: true |
-| item_id      | integer | null: false, foreign_key: true |
+| Column           | Type    | Options                        |
+| ---------------- | ------- | ------------------------------ |
+| user_id          | integer | null: false, foreign_key: true |
+| item_id          | integer | null: false, foreign_key: true |
+| card_number      | integer | null: false                    |
+| expiration_month | integer | null: false                    |
+| expiration_year  | integer | null: false                    |
+| security_code    | integer | null: false                    |
 
 ### Association
 
@@ -95,15 +99,15 @@ Things you may want to cover:
 
 ## address テーブル
 
-| Column        | Type    | Options                        |
-| ------------- | ------- | ------------------------------ |
-| postal_code   | string  | null: false                    |
-| prefecture    | integer | null: false                    |
-| city          | string  |                                |
-| house_number  | string  |                                |
-| building_name | string  |                                |
-| tel_number    | string  | null: false                    |
-| order_id      | integer | null: false, foreign_key: true |
+| Column             | Type    | Options                        |
+| ------------------ | ------- | ------------------------------ |
+| postal_code        | string  | null: false                    |
+| shipping_region_id | integer | null: false                    |
+| city               | string  | null: false                    |
+| house_number       | string  | null: false                    |
+| building_name      | string  |                                |
+| tel_number         | string  | null: false                    |
+| order_id           | integer | null: false, foreign_key: true |
 
 ### Association
 
