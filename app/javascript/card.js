@@ -7,7 +7,6 @@ const pay = () => {
     const formResult = document.getElementById("charge-form");
     const formData = new FormData(formResult);
 
-    console.log(...formData.entries());
     const card = {
       number: formData.get("item_order[number]"),
       cvc: formData.get("item_order[cvc]"),
@@ -17,7 +16,6 @@ const pay = () => {
     
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
-        console.log('card')
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
